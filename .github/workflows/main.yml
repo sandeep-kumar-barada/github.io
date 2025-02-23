@@ -1,0 +1,19 @@
+name: pages-build-deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Create missing directory
+        run: mkdir -p /github/workspace/docs
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1.0.13
