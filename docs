@@ -1,0 +1,4 @@
+mkdir docs
+git add docs
+git commit -m "Create missing docs directory"
+git push
